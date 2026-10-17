@@ -1,0 +1,60 @@
+# ── FMU Studio — Netlify configuration ─────────────────────────────
+# No build step: this is plain HTML/CSS/JS, published straight from the repo root.
+
+[build]
+  publish = "."
+  command = ""
+
+# Security + caching headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"
+
+[[headers]]
+  for = "/posters/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"
+
+# Tidy URLs
+[[redirects]]
+  from = "/book"
+  to = "/#book"
+  status = 301
+
+[[redirects]]
+  from = "/work"
+  to = "/#work"
+  status = 301
+
+# Short booking link used in outreach emails (fmustudio.netlify.app/call)
+# 302 so the target can be swapped any time without browsers caching it
+[[redirects]]
+  from = "/call"
+  to = "https://calendar.zoho.uk/zc/view/slot-booking/0801123ff96e6f9f55e2066adfab5f170000d8a7ea9f84cac02973bc06050d709bd0d0bbe976166b7002d4b11457173359fcf69b581ff7eb4fd8688dae4a913d9835ea"
+  status = 302
+  force = true
