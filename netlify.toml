@@ -51,7 +51,7 @@
   to = "/#work"
   status = 301
 
-# Short booking link used in outreach emails (fmustudio.netlify.app/call)
+# Short booking link used in outreach emails (fmustudio.co.uk/call)
 # 302 so the target can be swapped any time without browsers caching it
 [[redirects]]
   from = "/call"

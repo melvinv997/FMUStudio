@@ -151,8 +151,8 @@ Uses **Netlify Forms** — no backend, no third-party service.
 
 Brand orange is `#FF841F`, sampled from your logo.
 
-Before going live, replace `fmustudio.netlify.app` in `index.html` (canonical
-tag), `robots.txt` and `sitemap.xml` with your real domain.
+The site lives at **fmustudio.co.uk** (canonical tag, `robots.txt` and `sitemap.xml`
+already use it). Netlify sends the old `fmustudio.netlify.app` address there too.
 
 ---
 
