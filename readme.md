@@ -143,7 +143,7 @@ Uses **Netlify Forms** — no backend, no third-party service.
 | What | Where |
 |---|---|
 | Headline, services, process, FAQ | `index.html` |
-| Email address | search `hello@fmustudio.co.uk` (3 places) |
+| Email address | search `hello@fmustudio.co.uk` (2 places) |
 | Social links | footer, the three `href="#"` links |
 | Colours | `css/styles.css`, the `:root` block at the top |
 | Booking link for outreach (`/call`) | `netlify.toml`, the `/call` redirect |
