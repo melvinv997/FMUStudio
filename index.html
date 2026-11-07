@@ -3,18 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FMU Studio — AI social adverts &amp; video editing</title>
+<title>FMU Studio - AI social adverts &amp; video editing</title>
 <meta name="description" content="FMU Studio makes AI-generated social adverts and edits long and short form video for brands that need to be watched, not skipped. Book a free 15-minute call.">
 <link rel="canonical" href="https://fmustudio.co.uk/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="FMU Studio — AI social adverts &amp; video editing">
+<meta property="og:title" content="FMU Studio - AI social adverts &amp; video editing">
 <meta property="og:description" content="AI-generated social adverts and long &amp; short form editing. Book a free 15-minute call.">
-<meta property="og:image" content="/assets/og-image.jpg">
+<meta property="og:image" content="https://fmustudio.co.uk/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" href="/assets/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#111111">
 
 <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument-sans-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -40,8 +43,8 @@
 
 <header class="nav" data-nav>
   <a class="nav__logo" href="#top" aria-label="FMU Studio — home">
-    <img src="/assets/fmu-wordmark.png" alt="FMU Studio" width="720" height="393">
-    <img src="/assets/fmu-wordmark-dark.png" alt="" aria-hidden="true" width="720" height="393">
+    <img src="/assets/fmu-wordmark.svg" alt="FMU Studio" width="928" height="369">
+    <img src="/assets/fmu-wordmark-dark.svg" alt="" aria-hidden="true" width="928" height="369">
   </a>
   <nav class="nav__links" aria-label="Primary">
     <a href="#work">Work</a>
@@ -311,8 +314,8 @@
       <div class="book__pitch reveal">
         <p class="eyebrow eyebrow--light">01:08 — Next step</p>
         <h2 class="display display--md">Book a free call</h2>
-        <p class="lede">Fifteen minutes, no pitch deck, no obligation. Tell us what you're launching
-          and we'll tell you what we'd make and what it costs.</p>
+        <p class="lede">Fifteen minutes, no pitch deck, no obligation. Pick a time that suits you and
+          the invite lands in your inbox straight away. Tell us what you're launching and we'll tell you what we'd make and what it costs.</p>
 
         <ul class="book__points">
           <li>Straight answer on budget and timings</li>
@@ -322,58 +325,29 @@
 
         <p class="book__alt">Rather email? <a href="mailto:hello@fmustudio.co.uk">hello@fmustudio.co.uk</a></p>
 
-        <!-- PREFER A REAL CALENDAR?
-             Delete the <form> below and paste this in its place, swapping in
-             your own Calendly (or Cal.com) link:
-
-             <div class="calendly-inline-widget"
-                  data-url="https://calendly.com/YOUR-NAME/15min?hide_gdpr_banner=1&background_color=161513&text_color=ececE9&primary_color=ff841f"
-                  style="min-width:320px;height:680px"></div>
-             <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        -->
       </div>
 
-      <!-- Netlify Forms: works on the free tier, no backend needed. -->
-      <form class="form reveal" name="book-a-call" method="POST"
-            data-netlify="true" data-netlify-honeypot="bot-field" action="/success.html">
-        <input type="hidden" name="form-name" value="book-a-call">
-        <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
-
-        <div class="field">
-          <label for="name">Your name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required>
-        </div>
-
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
-        </div>
-
-        <div class="field">
-          <label for="company">Brand or channel</label>
-          <input id="company" name="company" type="text" autocomplete="organization">
-        </div>
-
-        <div class="field">
-          <label for="need">What do you need?</label>
-          <select id="need" name="need" required>
-            <option value="">Choose one</option>
-            <option>AI social adverts</option>
-            <option>Short form editing</option>
-            <option>Long form editing</option>
-            <option>A mix of these</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-
-        <div class="field field--full">
-          <label for="detail">What are you launching?</label>
-          <textarea id="detail" name="detail" rows="4" placeholder="Product, deadline, where it needs to run. Links welcome."></textarea>
-        </div>
-
-        <button class="btn btn--full" type="submit">Book a free call</button>
-        <p class="form__note">We reply within one working day. Your details go nowhere else.</p>
-      </form>
+      <!-- Cal.com inline booking: visitors pick a slot and get the invite straight away. -->
+      <div class="cal-embed reveal">
+        <div id="cal-inline" class="cal-embed__frame"></div>
+        <noscript><p class="cal-embed__fallback"><a class="btn" href="https://cal.com/fmustudio/intro-call">Open the booking calendar</a></p></noscript>
+        <p class="cal-embed__fallback cal-embed__alt">Calendar not loading? <a href="https://cal.com/fmustudio/intro-call" target="_blank" rel="noopener">Book on Cal.com</a></p>
+      </div>
+      <script>
+        (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "intro-call", { origin: "https://app.cal.com" });
+        Cal.ns["intro-call"]("inline", {
+          elementOrSelector: "#cal-inline",
+          calLink: "fmustudio/intro-call",
+          config: { layout: "month_view", theme: "dark" }
+        });
+        Cal.ns["intro-call"]("ui", {
+          theme: "dark",
+          cssVarsPerTheme: { dark: { "cal-brand": "#FD8421" } },
+          hideEventTypeDetails: false,
+          layout: "month_view"
+        });
+      </script>
     </div>
 
     <div class="wrap">
@@ -452,7 +426,7 @@
 
 <footer class="foot">
   <div class="wrap foot__wrap">
-    <img class="foot__logo" src="/assets/fmu-wordmark-dark.png" alt="FMU Studio" width="720" height="393" loading="lazy">
+    <img class="foot__logo" src="/assets/fmu-wordmark-dark.svg" alt="FMU Studio" width="928" height="369" loading="lazy">
     <div class="foot__cols">
       <div>
         <h4>Studio</h4>
