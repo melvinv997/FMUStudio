@@ -469,8 +469,16 @@ button,input,select,textarea{font:inherit;color:inherit}
   padding-block:clamp(5rem,11vh,8.5rem);padding-left:var(--rail-w);
 }
 .book .wrap{padding-left:var(--gutter)}
-.book__wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);
-  gap:clamp(2.5rem,6vw,5rem);align-items:start}
+.book__wrap{display:grid;grid-template-columns:minmax(0,1fr);
+  gap:clamp(2.5rem,5vw,3.5rem);align-items:start}
+/* Pitch sits above the calendar: headline + intro on the left, points on the right */
+.book__pitch{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  column-gap:clamp(2.5rem,6vw,5rem);align-items:end}
+.book__pitch>.eyebrow{grid-column:1;grid-row:1}
+.book__pitch>.display{grid-column:1;grid-row:2}
+.book__pitch>.lede{grid-column:1;grid-row:3}
+.book__pitch>.book__points{grid-column:2;grid-row:2}
+.book__pitch>.book__alt{grid-column:2;grid-row:3;align-self:end}
 .book__pitch .lede{color:var(--slate-light);margin-top:1.5rem}
 .book__pitch .display{margin-top:1rem}
 .book__points{margin-top:2rem;display:grid;gap:.7rem}
@@ -484,7 +492,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .book__alt a{color:var(--brand)}
 
 .cal-embed{background:var(--deep-2);border:1px solid var(--rule-dark);border-radius:4px;overflow:hidden;min-width:0}
-.cal-embed__frame{width:100%;min-height:640px;overflow:auto}
+.cal-embed__frame{width:100%;min-height:560px;overflow:auto}
 .cal-embed__fallback{padding:1rem 1.4rem;font-family:var(--ff-mono);font-size:.78rem;color:var(--slate-light);border-top:1px solid var(--rule-dark)}
 .cal-embed__fallback a{color:var(--brand)}
 .form{background:var(--deep-2);border:1px solid var(--rule-dark);border-radius:4px;
@@ -715,6 +723,8 @@ body.lb-open{overflow:hidden}
     padding-inline:var(--gutter);gap:3rem}
   .hero__frames{height:min(58svh,470px);max-width:520px}
   .book__wrap{grid-template-columns:1fr}
+  .book__pitch{grid-template-columns:1fr}
+  .book__pitch>*{grid-column:1 !important;grid-row:auto !important}
   .step{grid-template-columns:3.5rem 1fr;gap:.6rem 1.2rem}
   .step p{grid-column:2}
   .step__when{grid-column:2;text-align:left;padding-top:0}
