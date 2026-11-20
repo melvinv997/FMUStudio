@@ -771,3 +771,14 @@ body.lb-open{overflow:hidden}
   .leader__track{animation:none}
   .rail__head{box-shadow:none}
 }
+
+/* Privacy page */
+.legal{padding:clamp(3rem,8vw,6rem) 1.5rem}
+.legal__inner{max-width:68ch;margin:0 auto}
+.legal__logo{width:130px;margin-bottom:2.4rem}
+.legal__date{color:var(--slate);margin:.6rem 0 2.4rem}
+.legal h2{font-size:1.15rem;margin:2.2rem 0 .7rem}
+.legal p,.legal li{color:var(--slate);line-height:1.65}
+.legal ul{padding-left:1.2rem;display:grid;gap:.8rem}
+.legal a:not(.btn){color:inherit;text-decoration:underline}
+.legal .btn{margin-top:2.6rem}
