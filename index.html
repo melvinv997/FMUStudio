@@ -323,7 +323,8 @@
           <li>No contract discussed on the first call</li>
         </ul>
 
-        <p class="book__alt">Rather email? <a href="mailto:hello@fmustudio.co.uk">hello@fmustudio.co.uk</a></p>
+        <p class="book__alt">Rather email? <a href="mailto:hello@fmustudio.co.uk">hello@fmustudio.co.uk</a>
+        <a href="/privacy">Privacy</a></p>
 
       </div>
 
@@ -333,21 +334,7 @@
         <noscript><p class="cal-embed__fallback"><a class="btn" href="https://cal.com/fmustudio/intro-call">Open the booking calendar</a></p></noscript>
         <p class="cal-embed__fallback cal-embed__alt">Calendar not loading? <a href="https://cal.com/fmustudio/intro-call" target="_blank" rel="noopener">Book on Cal.com</a></p>
       </div>
-      <script>
-        (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "intro-call", { origin: "https://app.cal.com" });
-        Cal.ns["intro-call"]("inline", {
-          elementOrSelector: "#cal-inline",
-          calLink: "fmustudio/intro-call",
-          config: { layout: "month_view", theme: "dark" }
-        });
-        Cal.ns["intro-call"]("ui", {
-          theme: "dark",
-          cssVarsPerTheme: { dark: { "cal-brand": "#FD8421" } },
-          hideEventTypeDetails: false,
-          layout: "month_view"
-        });
-      </script>
+      <script src="/js/cal-init.js"></script>
     </div>
 
     <div class="wrap">
@@ -436,6 +423,7 @@
         <h4>Get in touch</h4>
         <a href="#book">Book a free call</a>
         <a href="mailto:hello@fmustudio.co.uk">hello@fmustudio.co.uk</a>
+        <a href="/privacy">Privacy</a>
       </div>
       <div>
         <h4>Elsewhere</h4>

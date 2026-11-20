@@ -13,6 +13,9 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    # Only the site itself, Cal.com (booking) and YouTube (portfolio) may run code or embed frames
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://app.cal.com https://www.youtube.com https://s.ytimg.com; frame-src https://app.cal.com https://cal.com https://www.youtube-nocookie.com https://www.youtube.com; img-src 'self' data: https://i.ytimg.com https://*.cal.com; style-src 'self' 'unsafe-inline' https://app.cal.com; font-src 'self' https://app.cal.com; connect-src 'self' https://app.cal.com https://*.cal.com https://www.youtube.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
 
 [[headers]]
   for = "/css/*"
@@ -41,6 +44,11 @@
     Cache-Control = "public, max-age=2592000, immutable"
 
 # Tidy URLs
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
 [[redirects]]
   from = "/book"
   to = "/#book"
